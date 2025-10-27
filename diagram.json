@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "author": "William",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -28.2, "left": -173.4, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": 26.8, "left": 278.4, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -147.6,
+      "left": -82.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -176.4,
+      "left": 61.4,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -101.65,
+      "left": -19.2,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -92.05,
+      "left": -201.6,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": 1.5,
+      "left": -397.7,
+      "attrs": { "distance": "15" }
+    }
+  ],
+  "connections": [
+    [ "servo1:V+", "uno:5V", "green", [ "h-124.8", "v67.4" ] ],
+    [ "servo1:GND", "uno:GND.2", "black", [ "h-38.4", "v96", "h-243.9" ] ],
+    [ "servo1:PWM", "uno:9", "green", [ "v-124.6", "h-288.8" ] ],
+    [ "ultrasonic1:VCC", "uno:5V", "red", [ "v76.8", "h92.2" ] ],
+    [ "ultrasonic1:GND", "uno:GND.3", "black", [ "v0" ] ],
+    [ "ultrasonic1:TRIG", "uno:2", "green", [ "v-124.8", "h379.5" ] ],
+    [ "ultrasonic1:ECHO", "uno:3", "green", [ "v-134.4", "h360" ] ],
+    [ "led1:A", "uno:7", "green", [ "v0" ] ],
+    [ "led1:C", "r2:2", "green", [ "v0" ] ],
+    [ "r2:1", "uno:GND.1", "green", [ "v0" ] ],
+    [ "led2:A", "uno:6", "green", [ "v0" ] ],
+    [ "led2:C", "r1:2", "green", [ "v0" ] ],
+    [ "r1:1", "uno:GND.1", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
